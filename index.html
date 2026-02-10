@@ -25,7 +25,7 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Это критически важно */
+            box-sizing: border-box; 
             outline: none;
         }
 
@@ -34,7 +34,7 @@
             background-color: var(--bg-deep);
             color: var(--white);
             scroll-behavior: smooth;
-            overflow-x: hidden; /* Защита от вылетов вбок */
+            overflow-x: hidden; 
             width: 100%;
         }
 
@@ -109,6 +109,7 @@
             border: 2px solid var(--gold-glow);
             border-radius: 50px;
             transition: 0.4s ease-in-out;
+            white-space: nowrap; /* Важно: Запрещает перенос номера */
         }
         .nav-phone:hover {
             background: var(--gold);
@@ -126,7 +127,7 @@
             padding: 120px 6% 60px;
             background: 
                 linear-gradient(to right, rgba(10, 12, 18, 0.98) 40%, rgba(10, 12, 18, 0.3)),
-                url('fast-truck.jpg'); /* Убедись, что файл в папке */
+                url('fast-truck.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -336,8 +337,16 @@
         @media (max-width: 768px) {
             nav { padding: 0 4%; height: 75px; }
             :root { --nav-h: 75px; }
-            .logo { font-size: 18px; letter-spacing: 1px; }
-            .nav-phone { font-size: 14px; padding: 10px 18px; }
+            
+            /* Уменьшаем лого, чтобы освободить место */
+            .logo { font-size: 17px; letter-spacing: 0.5px; }
+            
+            /* ФИКС НОМЕРА В ОДНУ СТРОКУ */
+            .nav-phone { 
+                font-size: 13.5px; 
+                padding: 10px 14px; 
+                white-space: nowrap; 
+            }
             
             #wheel-indicator { font-size: 26px; top: -14px; }
 
@@ -434,12 +443,7 @@
             </div>
             <div class="step-card reveal">
                 <div class="step-label">02</div>
-                <h3 style="color: var(--gold); font-size: 30px; margin-bottom: 15px;">Подача</h3>
-                <p>Машина прибывает точно в срок. Грузчики бережно упаковывают и грузят ваши вещи.</p>
-            </div>
-            <div class="step-card reveal">
-                <div class="step-id">03</div>
-                <h3 style="color: var(--gold); font-size: 30px; margin-bottom: 15px;">Оплата</h3>
+                <h3 style="color: var(--gold); font-size: 30px; margin-bottom: 15px;">Доставка</h3>
                 <p>Привозим груз, помогаем с расстановкой. Вы принимаете работу и оплачиваете.</p>
             </div>
         </div>
