@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Грузоперевозки Комфорт — Семей | Премиальный сервис</title>
+    <title>Грузоперевозки Комфорт — Семей | Профессиональный сервис</title>
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* --- 1. ФУНДАМЕНТАЛЬНЫЕ НАСТРОЙКИ --- */
+        /* --- 1. ПЕРЕМЕННЫЕ И ОСНОВА --- */
         :root {
-            --bg-deep: #0a0c12;         /* Глубокий темный фон */
-            --bg-card: #161b22;         /* Фон карточек */
-            --gold: #FFD700;            /* Основное золото */
-            --gold-light: #fff1a0;      /* Светлое золото для ховера */
+            --bg-deep: #0a0c12;         
+            --bg-card: #161b22;         
+            --gold: #FFD700;            
             --gold-glow: rgba(255, 215, 0, 0.4);
             --white: #ffffff;
             --gray-text: #b0b0b0;
             --kaspi-red: #ff4d4d;
-            --nav-h: 85px;              /* Высота навигации */
+            --nav-h: 85px;
         }
 
-        /* Глобальный сброс для исключения багов с шириной */
+        /* Полное исправление бага с шириной */
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Это лечит баг с обрезанием краев */
+            box-sizing: border-box; /* Это критически важно */
             outline: none;
         }
 
@@ -35,16 +34,16 @@
             background-color: var(--bg-deep);
             color: var(--white);
             scroll-behavior: smooth;
-            overflow-x: hidden; /* Защита от горизонтальной прокрутки */
+            overflow-x: hidden; /* Защита от вылетов вбок */
             width: 100%;
         }
 
-        /* --- 2. ИНТЕРАКТИВНОЕ КОЛЕСО (ИНДИКАТОР ПРОКРУТКИ) --- */
+        /* --- 2. ИНТЕРАКТИВНОЕ КОЛЕСО (ФИЗИКА КАЧЕНИЯ) --- */
         #scroll-track {
             position: fixed;
             top: var(--nav-h);
             left: 0;
-            width: 100%; /* Занимает всю ширину без багов */
+            width: 100%;
             height: 4px;
             background: rgba(255, 215, 0, 0.05);
             z-index: 9999;
@@ -55,7 +54,6 @@
             top: -18px;
             left: 0%;
             font-size: 36px;
-            /* Плавность и физика качения */
             transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
             pointer-events: none;
             filter: drop-shadow(0 0 12px var(--gold));
@@ -74,7 +72,7 @@
             transform: translateY(0) scale(1);
         }
 
-        /* --- 4. ПРЕМИАЛЬНАЯ НАВИГАЦИЯ (ИСПРАВЛЕННАЯ) --- */
+        /* --- 4. НАВИГАЦИЯ (GLASSMORPHISM) --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -84,7 +82,7 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             position: fixed;
-            width: 100%; /* Исправлено: 100% ширины */
+            width: 100%;
             height: var(--nav-h);
             top: 0;
             left: 0;
@@ -110,26 +108,25 @@
             padding: 12px 28px;
             border: 2px solid var(--gold-glow);
             border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: 0.4s ease-in-out;
         }
         .nav-phone:hover {
             background: var(--gold);
             color: #000;
             box-shadow: 0 0 25px var(--gold-glow);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         /* --- 5. ГЛАВНЫЙ ЭКРАН (HERO SECTION) --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
             display: flex;
             align-items: center;
-            padding: 0 6%;
-            /* Качественный фон */
+            padding: 120px 6% 60px;
             background: 
                 linear-gradient(to right, rgba(10, 12, 18, 0.98) 40%, rgba(10, 12, 18, 0.3)),
-                url('fast-truck.jpg');
+                url('fast-truck.jpg'); /* Убедись, что файл в папке */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -137,7 +134,6 @@
 
         .hero-content {
             max-width: 850px;
-            margin-top: 60px;
         }
 
         .hero-label {
@@ -147,11 +143,11 @@
             text-transform: uppercase;
             margin-bottom: 25px;
             display: block;
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .hero h1 {
-            font-size: 68px;
+            font-size: 72px;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 30px;
@@ -167,19 +163,18 @@
             max-width: 680px;
         }
 
-        /* ГЛАВНАЯ КНОПКА (WHATSAPP) */
         .btn-cta {
             display: inline-block;
             background: var(--gold);
             color: #000;
-            padding: 24px 65px;
+            padding: 25px 65px;
             border-radius: 18px;
             font-weight: 900;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 18px;
             box-shadow: 0 15px 40px rgba(255, 215, 0, 0.25);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .btn-cta:hover {
             transform: scale(1.06) translateY(-10px);
@@ -187,7 +182,6 @@
             box-shadow: 0 25px 50px rgba(255, 215, 0, 0.45);
         }
 
-        /* КАСПИ ПАНЕЛЬ */
         .kaspi-container {
             display: flex;
             gap: 15px;
@@ -206,7 +200,7 @@
         }
         .kaspi-badge.red { background: var(--kaspi-red); color: #fff; }
 
-        /* --- 6. СЕКЦИИ И КАРТОЧКИ --- */
+        /* --- 6. ОБЩИЕ СТИЛИ СЕКЦИЙ --- */
         section {
             padding: 140px 6%;
             text-align: center;
@@ -218,7 +212,7 @@
             margin: 0 auto 100px;
         }
         .section-header h2 {
-            font-size: 50px;
+            font-size: 52px;
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 25px;
@@ -231,14 +225,15 @@
             border-radius: 10px;
         }
 
-        /* КАРТОЧКИ УСЛУГ (WHITE) */
-        .white-section { background-color: #ffffff; color: #0a0c12; }
         .grid-system {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 40px;
         }
+
+        /* --- 7. КАРТОЧКИ УСЛУГ (WHITE) --- */
+        .white-section { background-color: #ffffff; color: #0a0c12; }
         .card-item {
             flex: 1;
             min-width: 320px;
@@ -247,7 +242,7 @@
             border-radius: 45px;
             border: 1px solid #f0f0f0;
             box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         .card-item:hover {
             transform: translateY(-25px);
@@ -260,7 +255,7 @@
             margin-bottom: 40px;
         }
 
-        /* ЭТАПЫ (DARK) */
+        /* --- 8. ЭТАПЫ РАБОТЫ (DARK) --- */
         .dark-section { background-color: #12161f; color: #fff; }
         .step-card {
             background: var(--bg-card);
@@ -284,20 +279,37 @@
             right: 15px;
         }
 
-        /* ОТЗЫВЫ */
+        /* --- 9. ОТЗЫВЫ --- */
         .review-box {
             background: #fff;
             text-align: left;
             border-left: 15px solid var(--gold);
             padding: 65px;
             box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+            border-radius: 0 45px 45px 0;
         }
         .stars-row { color: #ffcc00; font-size: 32px; margin-bottom: 25px; }
 
-        /* ФОРМА (ULTRA-BOX) */
+        /* --- 10. FAQ (ВОПРОСЫ) --- */
+        details {
+            max-width: 850px;
+            margin: 25px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        details:hover { transform: scale(1.02); }
+        summary { font-weight: 800; font-size: 22px; outline: none; list-style: none; }
+        summary::before { content: "Q: "; color: var(--gold); }
+
+        /* --- 11. ФОРМА КОНТАКТОВ --- */
         .form-wrapper {
             max-width: 750px;
-            margin: 0 auto;
+            margin: 40px auto 0;
             background: var(--bg-card);
             padding: 85px;
             border-radius: 50px;
@@ -320,7 +332,31 @@
             box-shadow: 0 0 25px var(--gold-glow);
         }
 
-        /* --- 7. ФУТЕР --- */
+        /* --- 12. АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ --- */
+        @media (max-width: 768px) {
+            nav { padding: 0 4%; height: 75px; }
+            :root { --nav-h: 75px; }
+            .logo { font-size: 18px; letter-spacing: 1px; }
+            .nav-phone { font-size: 14px; padding: 10px 18px; }
+            
+            #wheel-indicator { font-size: 26px; top: -14px; }
+
+            .hero { padding: 120px 4% 60px; text-align: center; }
+            .hero h1 { font-size: 38px; }
+            .hero p { font-size: 18px; }
+            .btn-cta { width: 100%; padding: 20px; font-size: 15px; }
+            .kaspi-container { justify-content: center; }
+
+            section { padding: 80px 4%; }
+            .section-header h2 { font-size: 34px; }
+            .card-item { min-width: 100%; padding: 40px 20px; }
+            .step-card { padding: 40px 25px; }
+            .form-wrapper { padding: 40px 20px; }
+            .form-wrapper input { font-size: 18px; padding: 20px; }
+            summary { font-size: 18px; }
+        }
+
+        /* --- 13. ФУТЕР --- */
         footer {
             padding: 110px 6%;
             background-color: #05070a;
@@ -330,6 +366,7 @@
         .footer-title { font-size: 34px; font-weight: 900; margin-bottom: 35px; }
         .footer-title span { color: var(--gold); }
         .footer-phone { font-size: 26px; color: var(--gold); font-weight: bold; margin-bottom: 45px; }
+        .footer-copy { opacity: 0.4; font-size: 16px; letter-spacing: 1px; }
 
     </style>
 </head>
@@ -347,7 +384,7 @@
     <header class="hero">
         <div class="hero-content">
             <span class="hero-label">ГОРОД СЕМЕЙ • 24/7</span>
-            <h1>Грузоперевозки <span>Комфорт</span>: Переезжай с удовольствием</h1>
+            <h1>Грузоперевозки <span>Комфорт</span>: Переезжай легко</h1>
             <p>Бережная доставка мебели, техники и личных вещей по всему Семею. Собственный автопарк, трезвые грузчики и подача в кратчайшие сроки.</p>
             
             <a href="https://wa.me/71234567890?text=Здравствуйте!" class="btn-cta" target="_blank">Написать в WhatsApp</a>
@@ -379,7 +416,7 @@
             <div class="card-item reveal">
                 <span class="material-icons">engineering</span>
                 <h3>Грузчики</h3>
-                <p>Профессиональные бригады для подъема тяжелых вещей на любой этаж. Работаем аккуратно.</p>
+                <p>Опытные специалисты для подъема тяжелых вещей на любой этаж. Аккуратная работа без царапин.</p>
             </div>
         </div>
     </section>
@@ -397,12 +434,12 @@
             </div>
             <div class="step-card reveal">
                 <div class="step-label">02</div>
-                <h3 style="color: var(--gold); font-size: 30px; margin-bottom: 15px;">Погрузка</h3>
+                <h3 style="color: var(--gold); font-size: 30px; margin-bottom: 15px;">Подача</h3>
                 <p>Машина прибывает точно в срок. Грузчики бережно упаковывают и грузят ваши вещи.</p>
             </div>
             <div class="step-card reveal">
-                <div class="step-label">03</div>
-                <h3 style="color: var(--gold); font-size: 30px; margin-bottom: 15px;">Доставка</h3>
+                <div class="step-id">03</div>
+                <h3 style="color: var(--gold); font-size: 30px; margin-bottom: 15px;">Оплата</h3>
                 <p>Привозим груз, помогаем с расстановкой. Вы принимаете работу и оплачиваете.</p>
             </div>
         </div>
@@ -421,13 +458,30 @@
             </div>
             <div class="card-item review-box reveal">
                 <div class="stars-row">★★★★★</div>
-                <p>"Очень удобно, что принимают оплату через Kaspi RED. Ребята грузчики просто профи — шкаф собрали за полчаса."</p>
+                <p>"Очень удобно, что принимают оплату через Kaspi RED. Ребята грузчики просто профи."</p>
                 <b style="display: block; margin-top: 35px; font-size: 24px;">— Динара К.</b>
             </div>
         </div>
     </section>
 
-    <section class="dark-section" style="background: var(--bg-main);">
+    <section class="white-section" style="background: #f8f9fa;">
+        <div class="section-header reveal">
+            <h2>Вопросы и <span>Ответы</span></h2>
+            <div class="line"></div>
+        </div>
+        <div class="reveal">
+            <details>
+                <summary>Как быстро приедет машина?</summary>
+                <p>В среднем по городу Семей подача занимает от 15 до 25 минут.</p>
+            </details>
+            <details>
+                <summary>Вы работаете в выходные?</summary>
+                <p>Да, мы работаем 24/7 без выходных и праздников.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="dark-section" style="background: var(--bg-deep);">
         <div class="section-header reveal">
             <h2>Нужен <span>Расчет</span>?</h2>
             <div class="line"></div>
@@ -435,7 +489,7 @@
         <div class="form-wrapper reveal">
             <p style="color: var(--gray-text); font-size: 24px; margin-bottom: 45px;">Оставьте номер телефона, и мы перезвоним вам в течение 5 минут для консультации.</p>
             <input type="text" placeholder="Ваше имя">
-            <input type="text" placeholder="+7 (___) ___-__-__">
+            <input type="text" placeholder="+7 (123) 456-78-90">
             <button class="btn-cta" style="width: 100%; border: none; cursor: pointer;">Перезвоните мне</button>
         </div>
     </section>
@@ -444,24 +498,21 @@
         <div class="footer-title">ГРУЗОПЕРЕВОЗКИ <span>КОМФОРТ</span></div>
         <p style="font-size: 20px; color: #fff; margin-bottom: 15px;">г. Семей, Казахстан</p>
         <div class="footer-phone">+7 (123) 456-78-90</div>
-        <p style="opacity: 0.4;">© 2026 Профессиональная логистика. Разработано для комфорта клиентов.</p>
+        <p class="footer-copy">© 2026 Профессиональная логистика. Все права защищены.</p>
     </footer>
 
     <script>
-        // 1. ФИЗИКА КОЛЕСА (Scroll Logic)
+        // 1. ФИЗИКА КОЛЕСА
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             let scrolled = (winScroll / height) * 100;
-            
             let wheel = document.getElementById("wheel-indicator");
-            // Умная привязка ширины: 98% для исключения вылета за край
             wheel.style.left = (scrolled * 0.98) + "%";
-            // Вращение (25 — коэффициент скорости)
             wheel.style.transform = "rotate(" + (scrolled * 25) + "deg)";
         };
 
-        // 2. ЭФФЕКТ ПОЯВЛЕНИЯ БЛОКОВ (Intersection Observer)
+        // 2. АНИМАЦИЯ ПОЯВЛЕНИЯ
         const revealCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -469,14 +520,8 @@
                 }
             });
         };
-
-        const revealObserver = new IntersectionObserver(revealCallback, {
-            threshold: 0.15
-        });
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            revealObserver.observe(el);
-        });
+        const revealObserver = new IntersectionObserver(revealCallback, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     </script>
 
 </body>
